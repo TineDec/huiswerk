@@ -47,5 +47,26 @@ lekkernijen.trace("w", callback)
 DIT = Button(interface, text="START!", fg="white", bg="#082fa9",borderwidth=10, font=('Helvetica', 10), command=callback)
 DIT.grid(row=40, column=7)
 
+l = Label(bg='white', width=20, text='empty')
+l.grid()
+
+def print_selection():
+    if (var1.get() == 1) & (var2.get() == 0):
+        l.config(text='Joepie!')
+        l.grid(row=50, column=7)
+    elif (var1.get() == 0) & (var2.get() == 1):
+        l.config(text='Verdikke :(')
+        l.grid(row=50, column=7)
+    elif (var1.get() == 0) & (var2.get() == 0):
+        l.config(text='Je hebt niets gedaan')
+        l.grid(row=50, column=7)
+
+var1 = IntVar()
+var2 = IntVar()
+c1 = Checkbutton(text='blij?',variable=var1, onvalue=1, offvalue=0, command=print_selection)
+c1.grid(row=49, column=5)
+c2 = Checkbutton(text='niet zo blij',variable=var2, onvalue=1, offvalue=0, command=print_selection)
+c2.grid(row=50, column=5)
+
 
 interface.mainloop()
