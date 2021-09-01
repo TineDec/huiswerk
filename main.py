@@ -59,14 +59,14 @@ def print_selection():
         l.config(text='Je hebt niets gedaan', bg="#f3da0b", padx=150)
         l.grid(row=100, column=10)
     elif (var1.get() == 1) & (var2.get() == 1):
-        l.config(text='Je kan slechts één van deze zaken zijn. Kies één optie en laat het andere veld leeg', bg="#f3da0b", padx=150)
+        l.config(text='Je kan slechts één van deze zaken zijn. Kies één optie en laat het andere veld leeg.', bg="#f3da0b", padx=150)
         l.grid(row=100, column=10)
 
 var1 = IntVar()
 var2 = IntVar()
-c1 = Checkbutton(text='blij?',variable=var1, onvalue=1, offvalue=0, command=print_selection)
+c1 = Checkbutton(text='blij met deze mooie toepassing?',variable=var1, onvalue=1, offvalue=0, command=print_selection)
 c1.grid(row=100, column=5)
-c2 = Checkbutton(text='niet zo blij',variable=var2, onvalue=1, offvalue=0, command=print_selection)
+c2 = Checkbutton(text='niet zo blij met hetgeen dat ik hier zie :(',variable=var2, onvalue=1, offvalue=0, command=print_selection)
 c2.grid(row=102, column=5)
 
 
